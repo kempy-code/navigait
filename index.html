@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Navigait</title>
+    <meta name="description" content="Navigait AI literacy platform" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #fff;
+        --text: #111827;
+        --muted: #6b7280;
+        --card: #f8fafc;
+        --acc: #4f46e5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        background: #ffffffdd;
+        backdrop-filter: blur(8px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 6%;
+        border-bottom: 1px solid #eee;
+      }
+
+      nav img {
+        height: 40px;
+      }
+
+      .links a {
+        margin: 0 14px;
+        color: #374151;
+        text-decoration: none;
+      }
+
+      .btn {
+        background: var(--acc);
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        transition: transform 0.25s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      section {
+        padding: 90px 6%;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 7vw, 72px);
+        margin: 0 0 24px;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .dashboard {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .bar {
+        height: 10px;
+        background: #e5e7eb;
+        border-radius: 99px;
+        overflow: hidden;
+        margin: 14px 0;
+      }
+
+      .fill {
+        width: 78%;
+        height: 100%;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+      }
+
+      .metric {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .badge {
+        display: inline-block;
+        background: #eef2ff;
+        color: #4338ca;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .grid3,
+      .stats {
+        display: grid;
+        gap: 24px;
+      }
+
+      .grid3 {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        padding: 28px;
+        border-radius: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .stats {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        text-align: center;
+      }
+
+      .stat b {
+        font-size: 2rem;
+      }
+
+      .fade {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .fade.show {
+        opacity: 1;
+        transform: none;
+      }
+
+      footer {
+        text-align: center;
+        padding: 32px;
+        color: #6b7280;
+        border-top: 1px solid #eee;
+      }
+
+      @keyframes float {
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <img src="logo.png" alt="Navigait Logo" />
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#schools">Schools</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn" href="#cta">Get Started</a>
+    </nav>
+
+    <section class="hero fade" id="about">
+      <div>
+        <h1>Navigate the Future with AI.</h1>
+        <p>
+          Navigait helps students develop the knowledge, critical thinking and confidence to use
+          artificial intelligence responsibly, ethically and effectively.
+        </p>
+        <p>
+          <a class="btn" href="#features">Learn More</a>
+          <a class="btn" style="background: #111827;" href="#">View Demo</a>
+        </p>
+      </div>
+
+      <div class="dashboard">
+        <h3>Student Dashboard</h3>
+        <div class="metric">
+          <span>AI Literacy</span>
+          <b>Level 7</b>
+        </div>
+        <div class="metric">
+          <span>Progress</span>
+          <span>78%</span>
+        </div>
+        <div class="bar">
+          <div class="fill"></div>
+        </div>
+        <div class="metric">
+          <span>Completed Modules</span>
+          <b>14</b>
+        </div>
+        <div class="metric">
+          <span>Current Mission</span>
+          <b>Bias Detection</b>
+        </div>
+        <p>
+          <span class="badge">AI Licence ✓</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="features" class="fade">
+      <h2>Features</h2>
+      <div class="grid3">
+        <div class="card">
+          <h3>🎓 AI Literacy</h3>
+          <p>Learn how AI works, where it succeeds and where it makes mistakes.</p>
+        </div>
+        <div class="card">
+          <h3>🧠 Critical Thinking</h3>
+          <p>Develop the skills to question, verify and evaluate AI outputs.</p>
+        </div>
+        <div class="card">
+          <h3>🚀 Future Ready</h3>
+          <p>Prepare students for education, careers and an AI-powered future.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="schools" class="fade">
+      <div class="stats">
+        <div class="stat">
+          <b>100%</b>
+          <div>Curriculum Aligned</div>
+        </div>
+        <div class="stat">
+          <b>5–12</b>
+          <div>Year Levels</div>
+        </div>
+        <div class="stat">
+          <b>Interactive</b>
+          <div>Learning</div>
+        </div>
+        <div class="stat">
+          <b>Future</b>
+          <div>Ready Skills</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="fade" style="text-align: center;">
+      <h2>Prepare Students for an AI-Powered Future</h2>
+      <a class="btn" href="#">Get Started</a>
+    </section>
+
+    <footer id="contact">© 2026 Navigait</footer>
+
+    <script>
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document.querySelectorAll('.fade').forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>
