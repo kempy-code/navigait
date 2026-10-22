@@ -1,144 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Navigait | What is AI?</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="../css/module.css">
-
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Navigait | AI Foundations</title>
+  <link rel="icon" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/module.css">
 </head>
-
-
 <body>
-
-
+<a class="skip-link" href="#lessonArea">Skip to lesson</a>
 <header class="module-header">
-
-
-<a href="../dashboard.html">
-← Dashboard
-</a>
-
-
-<h3>
-Navigait
-</h3>
-
-
-<span>
-Module 1
-</span>
-
-
+  <a href="../dashboard.html" class="back">← Dashboard</a>
+  <div class="module-title"><strong>Module 1</strong><span>What is Artificial Intelligence?</span></div>
+  <div class="header-progress"><div class="progress" aria-label="Module progress"><div id="moduleProgress"></div></div><span id="progressText">0% complete</span><strong id="xpDisplay">0 XP</strong></div>
+  <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="moduleSidebar">Lessons</button>
 </header>
+<div class="module-container">
+  <aside class="module-sidebar" id="moduleSidebar" aria-label="Module sections">
+    <h2>Your journey</h2><p class="time-note">About 35 minutes</p>
+    <nav id="sectionNav"></nav>
+    <button class="text-button" id="resetModule">Reset Module 1</button>
+  </aside>
+  <main class="lesson-area" id="lessonArea">
+    <section class="module-section" data-section="0">
+      <div class="lesson-card"><span class="tag">START HERE · 4 MIN</span><h1>Meet artificial intelligence</h1>
+      <p class="lead">AI is technology that performs tasks that usually need human abilities—such as recognising an image, understanding language, finding patterns or making predictions.</p>
+      <div class="concept-callout"><strong>Important:</strong> AI does not have a human mind. It uses patterns from data to calculate a likely output.</div>
+      <h2>AI or not AI?</h2><p>Sort every example. Drag the cards, or select a card and then choose a category.</p>
+      <div class="activity sort-activity" data-id="ai-or-not" data-xp="20" data-badge="AI Spotter">
+        <div class="sort-bank" aria-label="Examples to sort"></div>
+        <div class="sort-zones"><button class="sort-zone" data-zone="ai"><strong>AI</strong><span>Systems that learn patterns or make predictions</span></button><button class="sort-zone" data-zone="not"><strong>Not AI</strong><span>Fixed rules or simple automation</span></button></div>
+        <div class="feedback" aria-live="polite"></div>
+      </div><button class="next-section" disabled>Continue →</button></div>
+    </section>
 
+    <section class="module-section" data-section="1">
+      <div class="lesson-card"><span class="tag">SECTION 2 · 4 MIN</span><h1>AI vs normal software</h1>
+      <p class="lead">Traditional software follows rules written by a person. Machine-learning software finds useful patterns in examples.</p>
+      <div class="comparison-grid"><article><h3>Normal software</h3><p><b>Rules + input → answer</b></p><p>A calculator follows exact instructions. The same input always produces the same answer.</p></article><article><h3>Machine learning</h3><p><b>Examples + training → model</b></p><p>A spam filter learns patterns from labelled emails, then predicts whether a new message is spam.</p></article></div>
+      <div class="activity quiz" data-id="software-check" data-xp="10" data-answer="patterns" data-explanation="Machine learning learns patterns from labelled examples; a developer does not write a rule for every possible photo."><h2>Knowledge check</h2><p>How can a photo app recognise thousands of different dogs?</p><button data-value="rules">A programmer draws every dog</button><button data-value="patterns">It learns visual patterns from many examples</button><button data-value="internet">It asks the internet each time</button><div class="feedback" aria-live="polite"></div></div>
+      <button class="next-section" disabled>Continue →</button></div>
+    </section>
 
+    <section class="module-section" data-section="2">
+      <div class="lesson-card"><span class="tag">SECTION 3 · 6 MIN</span><h1>Train your AI</h1>
+      <p class="lead">Machine learning follows a cycle: <b>data → training → model → prediction</b>. A model is a learned pattern, not a database of perfect answers.</p>
+      <div class="process"><div><b>1. Data</b><span>Collect examples</span></div><div><b>2. Training</b><span>Find patterns</span></div><div><b>3. Model</b><span>Store learned relationships</span></div><div><b>4. Prediction</b><span>Estimate a new answer</span></div></div>
+      <div class="activity trainer" data-id="train-model" data-xp="20" data-badge="AI Trainer"><h2>Fruit sorter simulator</h2><p>Label at least four examples, then test the model. This is an honest simulation: more balanced examples increase its confidence.</p><div class="training-sample"><span id="sampleEmoji">🍎</span><strong id="sampleClue">red and round</strong></div><div class="button-row"><button data-label="apple">Label apple</button><button data-label="banana">Label banana</button></div><div class="meter"><span id="trainingFill"></span></div><p id="trainingStatus">0 examples labelled · confidence 20%</p><button class="test-model" disabled>Test a new example</button><div class="feedback" aria-live="polite"></div></div>
+      <button class="next-section" disabled>Continue →</button></div>
+    </section>
 
+    <section class="module-section" data-section="3">
+      <div class="lesson-card"><span class="tag">SECTION 4 · 4 MIN</span><h1>AI and generative AI around us</h1>
+      <p class="lead">Predictive AI ranks, recognises or forecasts. Generative AI creates new text, images, audio or code by predicting what should come next.</p>
+      <div class="example-grid"><article><h3>Recommendations</h3><p>Streaming services predict what you may enjoy from viewing patterns.</p></article><article><h3>Navigation</h3><p>Maps predict traffic using current and past journeys.</p></article><article><h3>Recognition</h3><p>Phones match face or speech patterns.</p></article><article><h3>Generation</h3><p>Chatbots predict words to create a response—not retrieve guaranteed truth.</p></article></div>
+      <div class="activity prompt-builder" data-id="prompt-builder" data-xp="20"><h2>Improve a weak prompt</h2><p>Weak prompt: “Tell me about space.” Choose the three details that make it useful for a Year 8 science explanation.</p><div class="choice-chips"><button data-useful="true">Explain black holes</button><button data-useful="true">Use 120 words</button><button data-useful="true">Include a simple analogy</button><button data-useful="false">Make it good</button><button data-useful="false">Know what I mean</button></div><div class="feedback" aria-live="polite"></div></div>
+      <button class="next-section" disabled>Continue →</button></div>
+    </section>
 
+    <section class="module-section" data-section="4">
+      <div class="lesson-card"><span class="tag">SECTION 5 · 5 MIN</span><h1>When confident answers are wrong</h1>
+      <p class="lead">AI is strong at speed, pattern-finding, drafting and generating options. It can still invent facts, citations or events. These mistakes are called <b>hallucinations</b>.</p>
+      <div class="concept-callout"><strong>Misinformation check:</strong> pause, find the original source, compare reliable sources, check the date and ask for evidence.</div>
+      <div class="activity quiz" data-id="ai-detective" data-xp="20" data-answer="source" data-badge="Fact Checker" data-explanation="Checking a reliable original source is stronger than trusting confidence, repeating the claim, or only asking the same AI again."><h2>AI Detective</h2><blockquote>“Australia banned homework nationwide in 2025,” an AI confidently claims.</blockquote><p>What is the best first response?</p><button data-value="trust">Trust it because it sounds specific</button><button data-value="repeat">Share it and see what people say</button><button data-value="source">Check an official education source and other reliable reporting</button><button data-value="again">Ask the same AI to confirm</button><div class="feedback" aria-live="polite"></div></div>
+      <button class="next-section" disabled>Continue →</button></div>
+    </section>
 
-<main class="module-container">
+    <section class="module-section" data-section="5">
+      <div class="lesson-card"><span class="tag">SECTION 6 · 5 MIN</span><h1>Bias, fairness and privacy</h1>
+      <p class="lead">AI can copy unfair patterns in its training data. Fair systems need relevant, representative data and human checks. Privacy matters because prompts may be stored or reviewed.</p>
+      <div class="two-activities"><div class="activity multi-choice" data-id="bias-challenge" data-xp="20" data-badge="Bias Detective" data-correct="leadership,teamwork,ideas"><h2>Bias challenge</h2><p>Select only fair, relevant evidence for a school leadership shortlist.</p><button data-value="leadership">Leadership examples</button><button data-value="teamwork">Teamwork feedback</button><button data-value="appearance">Appearance</button><button data-value="ideas">Ideas for the school</button><button data-value="postcode">Home postcode</button><button class="check-selection">Check choices</button><div class="feedback" aria-live="polite"></div></div>
+      <div class="activity multi-choice" data-id="privacy-challenge" data-xp="20" data-correct="topic,public"><h2>Privacy challenge</h2><p>Select what is safe to share with a study chatbot.</p><button data-value="topic">The topic you are studying</button><button data-value="password">Your school password</button><button data-value="medical">A classmate’s medical details</button><button data-value="public">A public article link</button><button data-value="address">Your home address</button><button class="check-selection">Check choices</button><div class="feedback" aria-live="polite"></div></div></div>
+      <button class="next-section" disabled>Continue →</button></div>
+    </section>
 
+    <section class="module-section" data-section="6">
+      <div class="lesson-card"><span class="tag">SECTION 7 · 4 MIN</span><h1>Use AI without losing your thinking</h1>
+      <p class="lead">Responsible use means staying in control: think first, protect private information, verify important claims, disclose AI help when required and make the final decision yourself.</p>
+      <div class="activity scenarios" data-id="scenario-decisions" data-xp="20"><h2>Decision lab</h2><div class="scenario"><strong>Choose the safest use:</strong><p>A student needs medical advice for severe symptoms.</p><button data-correct="false">Follow a chatbot’s diagnosis</button><button data-correct="true">Tell a trusted adult and contact a health professional</button></div><div class="scenario"><strong>Choose the responsible use:</strong><p>You are writing a history assignment.</p><button data-correct="true">Brainstorm questions, verify sources, then write in your own words</button><button data-correct="false">Submit AI-generated work unchanged</button></div><div class="scenario"><strong>Choose the ethical action:</strong><p>A friend asks for a fake video of a teacher.</p><button data-correct="false">Create it as a joke</button><button data-correct="true">Refuse because it could deceive and harm someone</button></div><div class="feedback" aria-live="polite"></div></div>
+      <div class="activity reflection" data-id="responsible-reflection" data-xp="20"><label for="reflectionRule"><h2>Your rule for responsible AI</h2><span>Write at least 30 characters. Your response stays on this device.</span></label><textarea id="reflectionRule" data-reflection="responsible-rule" minlength="30" placeholder="When I use AI, I will…"></textarea><small class="character-count">0 / 30 characters</small><div class="feedback" aria-live="polite"></div></div>
+      <button class="next-section" disabled>Continue to final mission →</button></div>
+    </section>
 
+    <section class="module-section" data-section="7">
+      <div class="lesson-card"><span class="tag">FINAL MISSION · 6 MIN</span><h1>AI Consultant Challenge</h1><p class="lead">Your school wants to use AI. Create a short plan that balances usefulness with safety.</p>
+      <div class="activity final-plan" data-id="consultant-plan" data-xp="50"><label>One useful AI application<textarea data-reflection="final-benefit" minlength="20" placeholder="AI could help by…"></textarea></label><label>One realistic risk<textarea data-reflection="final-risk" minlength="20" placeholder="A risk is…"></textarea></label><label>One responsible-use rule<textarea data-reflection="final-rule" minlength="20" placeholder="Students should…"></textarea></label><div class="feedback" aria-live="polite"></div></div>
+      <div class="activity quiz" data-id="final-check" data-xp="10" data-answer="control" data-explanation="Responsible AI users keep human judgement in control, verify important information and protect privacy."><h2>Final knowledge check</h2><p>Which principle connects everything in this module?</p><button data-value="speed">Use AI whenever it is faster</button><button data-value="control">Keep human judgement in control</button><button data-value="secret">Never tell anyone you used AI</button><div class="feedback" aria-live="polite"></div></div>
+      <button class="next-section" disabled>Complete Module →</button></div>
+    </section>
 
-<section class="module-top">
-
-
-<h1 id="moduleTitle">
-Loading...
-</h1>
-
-
-<p id="moduleDescription">
-</p>
-
-
-
-<div class="progress-area">
-
-
-<div class="progress-label">
-
-<span>
-Progress
-</span>
-
-<strong id="progressText">
-0%
-</strong>
-
+    <section class="completion-screen" hidden><div class="completion-icon">✓</div><span class="tag">MODULE COMPLETE</span><h1>AI foundations secured.</h1><p>You can explain how AI learns, question its outputs and make responsible choices.</p><div class="completion-stats"><div><strong id="finalXP">0</strong><span>Total XP</span></div><div><strong>100%</strong><span>Complete</span></div><div><strong>AI Foundations</strong><span>Badge unlocked</span></div></div><a class="primary-link" href="../dashboard.html">Return to Dashboard →</a></section>
+  </main>
 </div>
-
-
-<div class="progress-bar">
-
-<div id="progressFill"></div>
-
-</div>
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<section class="lesson-navigation">
-
-
-<h3>
-Lessons
-</h3>
-
-
-<div id="lessonList">
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-<section id="lessonContent" class="lesson-card">
-
-
-</section>
-
-
-
-
-</main>
-
-
-
-
-
-<script src="../modules/data/module1.js"></script>
-<script src="../js/storage.js"></script>
-<script src="../js/module.js"></script>
-
-
-</body>
-
-</html>
+<div class="toast-region" aria-live="polite"></div>
+<dialog id="resetDialog"><h2>Reset Module 1?</h2><p>This removes Module 1 progress, responses and Module 1 XP. Other prototype data stays.</p><div class="dialog-actions"><button id="cancelReset">Cancel</button><button class="danger-button" id="confirmReset">Reset module</button></div></dialog>
+<script src="../js/storage.js"></script><script src="../js/module.js"></script>
+</body></html>
