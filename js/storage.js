@@ -4,7 +4,7 @@
   const STORAGE_KEY = "navigaitUser";
   const MODULE_SECTIONS = 8;
   const defaultModule = { title: "What is Artificial Intelligence?", progress: 0, currentSection: 0, completedSections: [], completedActivities: [], reflections: {}, completed: false, xpEarned: 0 };
-  const defaultUser = { name: "Student", xp: 0, level: 1, badges: [], streak: 0, activity: [], awardedRewards: [], modules: { module1: defaultModule }, games: { promptWars: { entries: [] } } };
+  const defaultUser = { name: "Student", xp: 0, level: 1, badges: [], streak: 0, activity: [], awardedRewards: [], modules: { module1: defaultModule }, games: { promptWars: { entries: [] }, realOrAI: { highScore: 0, plays: [] } } };
   const clone = (value) => JSON.parse(JSON.stringify(value));
   const safeArray = (value) => Array.isArray(value) ? value : [];
   const calculateLevel = (xp) => Math.floor(Math.max(0, xp) / 250) + 1;
@@ -25,6 +25,9 @@
     user.games = old.games && typeof old.games === "object" ? old.games : {};
     user.games.promptWars = Object.assign({ entries: [] }, user.games.promptWars || {});
     user.games.promptWars.entries = safeArray(user.games.promptWars.entries).slice(-30);
+    user.games.realOrAI = Object.assign({ highScore: 0, plays: [] }, user.games.realOrAI || {});
+    user.games.realOrAI.highScore = Math.max(0, Number(user.games.realOrAI.highScore) || 0);
+    user.games.realOrAI.plays = safeArray(user.games.realOrAI.plays).slice(-30);
     const module = user.modules.module1;
     const migratedSections = safeArray(oldModule.completedSections);
     const inferredSections = migratedSections.length ? migratedSections : Array.from({ length: Math.max(0, Number(oldModule.currentSection) || 0) }, (_, index) => index);
@@ -156,6 +159,15 @@
     saveUserData(user);
     return saved;
   }
-  window.NavigaitStorage = { getUserData, saveUserData, addActivity, awardXP, addXP, unlockBadge, completeActivity, saveReflection, completeLesson, updateModuleProgress, finishModule, resetModule, resetEverything, savePromptWarsEntry, calculateLevel, totalSections: MODULE_SECTIONS };
+  function saveRealOrAIScore(score) {
+    const user = getUserData();
+    const entry = { id: `real-or-ai-${Date.now()}`, score: Math.max(0, Number(score) || 0), date: new Date().toISOString() };
+    user.games.realOrAI.plays = [...user.games.realOrAI.plays, entry].slice(-30);
+    user.games.realOrAI.highScore = Math.max(user.games.realOrAI.highScore, entry.score);
+    addActivityToUser(user, `Scored ${entry.score} in Real or AI?`, "Game", 0);
+    saveUserData(user);
+    return user.games.realOrAI;
+  }
+  window.NavigaitStorage = { getUserData, saveUserData, addActivity, awardXP, addXP, unlockBadge, completeActivity, saveReflection, completeLesson, updateModuleProgress, finishModule, resetModule, resetEverything, savePromptWarsEntry, saveRealOrAIScore, calculateLevel, totalSections: MODULE_SECTIONS };
   Object.assign(window, window.NavigaitStorage);
 })();
